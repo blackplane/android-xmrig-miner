@@ -8,8 +8,10 @@ cd ${BASEDIR}
 
 rm -fr out arm arm64 x86 x86_64 android-toolchain-**
 
+echo `pwd`
+
 chmod +x ./gyp_uv.py
-chmod +x ./build/gyp -R
+chmod -R +x ./build/gyp
 
 source android-configure-arm ${NDK} gyp 23
 BUILDTYPE=Release make -C out
